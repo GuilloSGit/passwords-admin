@@ -8,18 +8,18 @@ class CreatePasswordForm(ModelForm):
         queryset=User.objects.all(),
         required=False,
         widget=forms.CheckboxSelectMultiple(attrs={'class': 'shared-with-checkbox'}),
-        label='Shared with'
+        label='Compartir con:'
     )
     
     class Meta:
         model = Password
         fields = ['name', 'url', 'password', 'passwordTag', 'shared', 'sharedWith']
         labels = {
-            'name': 'Name',
-            'url': 'URL',
-            'password': 'Password',
-            'passwordTag': 'Tag',
-            'shared': 'Shared',
+            'name': 'Nombre de usuario o correo utilizado',
+            'url': 'URL del sitio',
+            'password': 'Contraseña',
+            'passwordTag': 'Etiqueta (opcional - 12 caracteres máx.)',
+            'shared': 'Compartir contraseña',
         }
 
     def __init__(self, *args, **kwargs):
