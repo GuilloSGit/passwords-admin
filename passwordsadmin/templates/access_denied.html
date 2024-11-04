@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="container">
+  <h1>Acceso Denegado</h1>
+  <p>
+    No tienes acceso a esta información porque o no existe o no ha sido compartida contigo.
+  </p>
+  <div class="container ma-0">
+      <a href="{% url 'passwords' %}" class="btn btn-primary">Volver atrás</a>
+  </div>
+</div>
+{% endblock %}

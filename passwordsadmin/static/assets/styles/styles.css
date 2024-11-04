@@ -1,0 +1,147 @@
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "quicksand", sans-serif;
+}
+
+/* Cambiar el color de un SVG desde CSS */
+.floating-icon {
+  position: absolute;
+  right: 3rem;
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.sheet {
+  position: absolute;
+  z-index: 2;
+  color: #afafc0;
+  margin-top: 20px;
+}
+
+.key {
+  position: absolute;
+  right: 4.5rem;
+  z-index: 1;
+  color: #a98d8d;
+  animation: secure 4s infinite alternate-reverse;
+}
+
+@keyframes secure {
+  0% {
+    transform: translateX(-40%);
+  }
+  20% {
+    transform: rotateX(3rad);
+  }
+  40% {
+    transform: rotateX(-3rad);
+  }
+  60% {
+    transform: rotateX(3rad);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+body > div > div > div.col-md-6 > form > div > p:nth-child(5) {
+  display: flex;
+  align-items: center;
+}
+
+body > div > div > div.col-md-6 > form > div > p:nth-child(5) label {
+  margin-left: 8px;
+  margin-right: 0;
+  margin-bottom: -2px;
+}
+
+body
+  > div
+  > div
+  > div.col-md-6
+  > form
+  > div
+  > p:nth-child(5)
+  input[type="checkbox"] {
+  order: 1;
+  width: 16px;
+  height: 16px;
+}
+
+body > div > div > div.col-md-6 > form > div > p:nth-child(5) label {
+  order: 2;
+}
+
+body > div > div > div.col-md-6 > form > div > p:nth-child(5) label::after {
+  content: "";
+}
+
+.bi-people-fill.icon-shared {
+  color: #0f0;
+}
+
+.bi-person-slash.icon-not-shared {
+  color: #000;
+}
+
+.btn-outline-secondary.copy-button {
+  color: #fff;
+}
+
+.btn-outline-secondary.copy-button:hover {
+  color: #fe4;
+}
+
+#id_sharedWith.form-control {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.3rem;
+  border: none;
+  height: auto;
+  width: auto;
+}
+
+form > div > p:nth-child(6) {
+  padding: 0;
+  margin: 0;
+}
+
+form > div > p:nth-child(6) > label {
+  margin-bottom: 0;
+}
+.shared-with-checkbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.shared-with-checkbox label {
+  margin-bottom: 0;
+}
+
+.shared-with-checkbox input[type="checkbox"] {
+  width: 5px;
+  height: 5px;
+}
+
+#id_sharedWith > div > label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+#id_sharedWith > div input[type="checkbox"] {
+  margin-right: 3px;
+}
+
+.listNamesShared {
+  list-style: none;
+}
+
+.helptext {
+  display: none;
+}

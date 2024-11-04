@@ -1,0 +1,74 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="container">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    fill="currentColor"
+    class="bi bi-file-earmark-lock-fill floating-icon sheet"
+    viewBox="0 0 16 16"
+  >
+    <path
+      d="M7 7a1 1 0 0 1 2 0v1H7zM6 9.3c0-.042.02-.107.105-.175A.64.64 0 0 1 6.5 9h3a.64.64 0 0 1 .395.125c.085.068.105.133.105.175v2.4c0 .042-.02.107-.105.175A.64.64 0 0 1 9.5 12h-3a.64.64 0 0 1-.395-.125C6.02 11.807 6 11.742 6 11.7z"
+    />
+    <path
+      d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M10 7v1.076c.54.166 1 .597 1 1.224v2.4c0 .816-.781 1.3-1.5 1.3h-3c-.719 0-1.5-.484-1.5-1.3V9.3c0-.627.46-1.058 1-1.224V7a2 2 0 1 1 4 0"
+    />
+  </svg>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    fill="currentColor"
+    class="bi bi-key-fill floating-icon key"
+    viewBox="0 0 16 16"
+  >
+    <path
+      d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2M2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"
+    />
+  </svg>
+  <!-- main -->
+  <main>
+    <div class="jumbotron mt-0">
+      <h3>Administrador de Contraseñas Compartidas</h3>
+      <p class="lead">
+        <!-- Breve descripción de la app -->
+        Administra tus contraseñas de manera segura
+      </p>
+      <hr class="my-4" />
+      <p>
+        Con esta aplicación, puedes almacenar tus contraseñas de manera segura. También puedes generar nuevas contraseñas y guardarlas de forma segura.
+      </p>
+      <hr class="my-4" />
+      <p>
+        Considera la posibilidad de compartir algunas de tus contraseñas con familiares, compañeros o amigos. <br> Esta aplicación te permite hacerlo.
+      </p>
+      <p>
+        <a
+          class="btn btn-primary"
+          data-toggle="collapse"
+          href="#collapseExample"
+          role="button"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+        >
+          Aprende más
+        </a>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body user-select-none">
+          Hay opciones para crear, leer, actualizar y eliminar contraseñas.
+          <br />
+          También puedes compartir tus contraseñas con otros usuarios. <br />
+          <hr class="my-4" />
+          ¿Estás trabajando en un proyecto y necesitas compartir una contraseña con tu equipo?<br />
+          ¿Eres un profesor que necesita compartir una contraseña con tus estudiantes?<br />
+          ¿Eres un padre que necesita compartir una contraseña con tus hijos?<br />
+          Esta es la aplicación que necesitas.
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
