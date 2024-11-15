@@ -13,9 +13,10 @@ class Password(models.Model):
     active       = models.BooleanField(default=True)
 
     def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
         if not self.shared:
             self.sharedWith.clear()
-        super().save(*args, **kwargs)
+
 
     def __str__(self):
         return self.name

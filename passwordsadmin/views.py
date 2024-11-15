@@ -67,13 +67,12 @@ def create_password(request):
             if form.is_valid():
                 new_password = form.save(commit=False)
                 new_password.user = request.user
-                new_password.shared = form.cleaned_data.get('shared', False)
                 new_password.save()
 
                 if new_password.shared:
-                    new_password.sharedWith.set(
-                        form.cleaned_data['sharedWith'])
-                form.save_m2m()
+                    new_password.sharedWith.set(form.cleaned_data['sharedWith'])
+                else:
+                    new_password.sharedWith.clear()  # Limpiar si no es compartido.
 
                 return redirect('passwords')
             else:
@@ -86,6 +85,7 @@ def create_password(request):
                 'form': CreatePasswordForm(user=request.user),
                 'error': 'Invalid data'
             })
+
 
 
 @login_required
