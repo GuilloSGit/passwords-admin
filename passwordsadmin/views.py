@@ -46,7 +46,8 @@ def signup(request):
 @login_required
 def passwords(request):
     owned_list = Password.objects.filter(user=request.user, active=True)
-    received_list = Password.objects.filter(shared=True, sharedWith=request.user, active=True)
+    received_list = Password.objects.filter(
+        shared=True, sharedWith=request.user, active=True)
     return render(request, 'passwords.html', {
         'on_passwords_page': True,
         'owned_list': owned_list,
@@ -70,9 +71,11 @@ def create_password(request):
                 new_password.save()
 
                 if new_password.shared:
-                    new_password.sharedWith.set(form.cleaned_data['sharedWith'])
+                    new_password.sharedWith.set(
+                        form.cleaned_data['sharedWith'])
                 else:
-                    new_password.sharedWith.clear()  # Limpiar si no es compartido.
+                    # Limpiar si no es compartido.
+                    new_password.sharedWith.clear()
 
                 return redirect('passwords')
             else:
@@ -85,7 +88,6 @@ def create_password(request):
                 'form': CreatePasswordForm(user=request.user),
                 'error': 'Invalid data'
             })
-
 
 
 @login_required
@@ -121,19 +123,19 @@ def password_detail(request, password_id):
     except Password.DoesNotExist:
         return redirect('access_denied')
 
+
 @login_required
 def password_delete(request, password_id):
     password = get_object_or_404(Password, pk=password_id, user=request.user)
-    
+
     if request.method == 'POST':
         password.active = False
         password.save()
         return redirect('passwords')
-    
+
     return render(request, 'password_confirm_delete.html', {
         'password': password
     })
-
 
 
 @login_required

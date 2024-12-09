@@ -1,13 +1,13 @@
 {% extends 'base.html' %} {% block content %}
-<div class="container">
-  <h3>Iniciar sesión</h3>
+  <div class="container">
+    <h3>Iniciar sesión</h3>
 
-  <form action="/login/" method="POST">
-    {% csrf_token %} {{ form.as_p }}
-    <div class="container">
-      <p class="text-danger">{{ error }}</p>
-    </div>
-    <button type="submit" class="btn btn-primary">Iniciar sesión</button>
-  </form>
-</div>
+    <form action="/login/" method="POST">
+      {% csrf_token %} {{ form.as_p }}
+      <div class="container">
+        <p class="text-danger">{{ error }}</p>
+      </div>
+      <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+    </form>
+  </div>
 {% endblock %}

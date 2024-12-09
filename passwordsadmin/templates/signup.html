@@ -1,15 +1,15 @@
 {% extends 'base.html' %} {% load static %}
 {% block content %}
-<link rel="stylesheet" href="{% static 'assets/styles/signup.css' %}" />
-<div class="container">
-  <h3>Registrarse</h3>
+  <link rel="stylesheet" href="{% static 'assets/styles/signup.css' %}" />
+  <div class="container">
+    <h3>Registrarse</h3>
 
-  <form method="POST">
-    {% csrf_token %} {{ form.as_p }}
-    <div class="container">
-      <p class="text-danger">{{ error }}</p>
-    </div>
-    <button class="btn btn-primary" type="submit">Registrarse</button>
-  </form>
-</div>
+    <form method="POST">
+      {% csrf_token %} {{ form.as_p }}
+      <div class="container">
+        <p class="text-danger">{{ error }}</p>
+      </div>
+      <button class="btn btn-primary" type="submit">Registrarse</button>
+    </form>
+  </div>
 {% endblock %}
